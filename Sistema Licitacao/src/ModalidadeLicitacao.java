@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 public abstract class ModalidadeLicitacao {
 
@@ -8,6 +9,28 @@ public abstract class ModalidadeLicitacao {
 	protected String tipoLicitacao = "licitacao sem tipo";
 	protected Objeto objetoLicitaçao;
 	protected Float valorEstimadoLicitacao;
+	protected int numeroLicitacao;
+	protected int anoLicitacao;
+	protected String faseLicitacao;
+	private Random geradorNroLicitacao = new Random();
+	
+	
+	public int getNumeroLicitacao() {
+		return numeroLicitacao;
+	}
+
+	public void setNumeroLicitacao() {
+		this.numeroLicitacao = geradorNroLicitacao.nextInt();
+	}
+
+	public int getAnoLicitacao() {
+		return anoLicitacao;
+	}
+
+	public void setAnoLicitacao(int anoLicitacao) {
+		this.anoLicitacao = anoLicitacao;
+	}
+
 	protected List<Licitante> licitantes = new ArrayList<Licitante>();
 	
 	//getters and setters
@@ -15,7 +38,7 @@ public abstract class ModalidadeLicitacao {
 		return this.nomeLicitacao;
 	}
 	
-	public void setNomeLicatacao( String nome ) {
+	public void setNomeLicitacao( String nome ) {
 		this.nomeLicitacao = nome;
 	}
 	
@@ -43,6 +66,9 @@ public abstract class ModalidadeLicitacao {
 	
 	public void addLicitante( Licitante licitante ){
 		this.licitantes.add( licitante );
+		
+		Licitante novoLicitante = licitante;
+		novoLicitante.addLicitacao( this );
 	}
 	
 	public void printLicitantes(){

@@ -7,6 +7,23 @@ public class Licitante {
 	private String cnpjLicitante;
 	private String enderecoLicitante;
 	private String telefoneLicitante;
+	private String emailLicitante;
+	private String ramoLicitante;
+	
+	
+	public String getEmailLicitante() {
+		return emailLicitante;
+	}
+	public void setEmailLicitante(String emailLicitante) {
+		this.emailLicitante = emailLicitante;
+	}
+	public String getRamoLicitante() {
+		return ramoLicitante;
+	}
+	public void setRamoLicitante(String ramoLicitante) {
+		this.ramoLicitante = ramoLicitante;
+	}
+
 	private List<ModalidadeLicitacao> licitacoes = new ArrayList<ModalidadeLicitacao>();
 	
 	public String getNomeLicitante() {

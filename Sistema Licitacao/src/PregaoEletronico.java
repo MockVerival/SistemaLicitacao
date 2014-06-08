@@ -7,6 +7,6 @@ public class PregaoEletronico extends ModalidadeLicitacao {
 
 	@Override
 	public void setTipoLicitacao(String tipoLicitacao) {
-		this.tipoLicitacao = "Menor preco";		
+		this.tipoLicitacao = "Menor preço";		
 	}
 }
