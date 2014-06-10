@@ -1,3 +1,4 @@
+package sistema.licitacao;
 
 public class Convite extends ModalidadeLicitacao{
 

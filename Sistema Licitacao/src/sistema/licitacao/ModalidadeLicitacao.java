@@ -1,3 +1,4 @@
+package sistema.licitacao;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
@@ -5,7 +6,7 @@ import java.util.Random;
 public abstract class ModalidadeLicitacao {
 
 	//attributes
-	protected String nomeLicitacao = "licatacao sem nome";
+	protected String nomeLicitacao = "licitacao sem nome";
 	protected String tipoLicitacao = "licitacao sem tipo";
 	protected Objeto objetoLicitaçao;
 	protected Float valorEstimadoLicitacao;
@@ -13,8 +14,9 @@ public abstract class ModalidadeLicitacao {
 	protected int anoLicitacao;
 	protected String faseLicitacao;
 	private Random geradorNroLicitacao = new Random();
-	
-	
+	protected List<Licitante> licitantes = new ArrayList<Licitante>();	
+
+	//getters and setters	
 	public int getNumeroLicitacao() {
 		return numeroLicitacao;
 	}
@@ -31,9 +33,6 @@ public abstract class ModalidadeLicitacao {
 		this.anoLicitacao = anoLicitacao;
 	}
 
-	protected List<Licitante> licitantes = new ArrayList<Licitante>();
-	
-	//getters and setters
 	public String getNomeLicitacao() {
 		return this.nomeLicitacao;
 	}
@@ -69,6 +68,11 @@ public abstract class ModalidadeLicitacao {
 		
 		Licitante novoLicitante = licitante;
 		novoLicitante.addLicitacao( this );
+	}
+
+	public List<Licitante> getLicitantes()
+	{
+		return licitantes;
 	}
 	
 	public void printLicitantes(){

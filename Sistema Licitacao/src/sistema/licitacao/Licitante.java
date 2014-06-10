@@ -1,3 +1,4 @@
+package sistema.licitacao;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -9,7 +10,7 @@ public class Licitante {
 	private String telefoneLicitante;
 	private String emailLicitante;
 	private String ramoLicitante;
-	
+	private List<ModalidadeLicitacao> licitacoes = new ArrayList<ModalidadeLicitacao>();
 	
 	public String getEmailLicitante() {
 		return emailLicitante;
@@ -24,8 +25,6 @@ public class Licitante {
 		this.ramoLicitante = ramoLicitante;
 	}
 
-	private List<ModalidadeLicitacao> licitacoes = new ArrayList<ModalidadeLicitacao>();
-	
 	public String getNomeLicitante() {
 		return nomeLicitante;
 	}
@@ -52,6 +51,11 @@ public class Licitante {
 	}
 	public void addLicitacao( ModalidadeLicitacao licitacao ){
 		this.licitacoes.add( licitacao );
+	}
+
+	public List<ModalidadeLicitacao> getLicitacoes()
+	{
+		return this.licitacoes;
 	}
 	
 	public void printLicitacoes(){
